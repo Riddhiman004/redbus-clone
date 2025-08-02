@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FlexiSpot - Seat Selection</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header>
+        <h1>Flexi<span style="color:#fca311;">Spot</span></h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="search.html">Book Now</a>
+            <a href="my-bookings.html">Show Booking</a>
+            <span id="authLinks"></span>
+        </nav>
+    </header>
+    <main>
+        <section class="seat-selection-container">
+            <div class="seat-selection-form">
+                <h2>Book a Seat for Your Bus</h2>
+                <form id="seatSelectionForm">
+                    <label for="busName">Bus Name:</label>
+                    <input type="text" id="busName" name="busName" readonly />
+                    <label for="seatNumbers">Select Seat Numbers (comma separated):</label>
+                    <input type="text" id="seatNumbers" name="seatNumbers" required placeholder="e.g. 1, 2, 3" />
+                    <button type="submit">Confirm Booking</button>
+                </form>
+            </div>
+            <div class="seat-layout">
+                <h3>Seat Layout</h3>
+                <div class="seat-icons">
+                    <div class="seat-icon"><div class="icon icon-available"></div> Available</div>
+                    <div class="seat-icon"><div class="icon icon-selected"></div> Selected</div>
+                    <div class="seat-icon"><div class="icon icon-booked"></div> Booked</div>
+                </div>
+                <div class="seat-grid" id="seatGrid">
+                    <!-- Seats will be dynamically generated here -->
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

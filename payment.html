@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BusiFY - Payment</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header>
+        <h1>Busi<span style="color:#fca311;">FY</span></h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="search.html">Book Now</a>
+            <a href="my-bookings.html">Show Booking</a>
+            <span id="authLinks"></span>
+        </nav>
+    </header>
+    <main>
+        <section class="payment-section">
+            <h2>Payment</h2>
+            <div id="bookingSummary"></div>
+            <form id="paymentForm">
+                <label for="paymentMethod">Select Payment Method:</label>
+                <select id="paymentMethod" name="paymentMethod" required>
+                    <option value="">--Select--</option>
+                    <option value="card">Card</option>
+                    <option value="upi">UPI</option>
+                    <option value="cod">Cash on Delivery (COD)</option>
+                </select>
+
+                <div id="cardDetails" style="display:none;">
+                    <label for="cardName">Cardholder Name:</label>
+                    <input type="text" id="cardName" name="cardName" />
+                    <label for="cardNumber">Card Number:</label>
+                    <input type="text" id="cardNumber" name="cardNumber" pattern="\\d{16}" placeholder="1234 5678 9012 3456" />
+                    <label for="expiryDate">Expiry Date:</label>
+                    <input type="month" id="expiryDate" name="expiryDate" />
+                    <label for="cvv">CVV:</label>
+                    <input type="password" id="cvv" name="cvv" pattern="\\d{3}" placeholder="123" />
+                </div>
+
+                <div id="upiDetails" style="display:none;">
+                    <label for="upiId">UPI ID:</label>
+                    <input type="text" id="upiId" name="upiId" placeholder="example@upi" />
+                </div>
+
+                <button type="submit">Pay Now</button>
+            </form>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

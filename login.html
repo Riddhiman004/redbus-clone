@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Redbus Clone - Login</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        .login-form {
+            max-width: 400px;
+            margin: 2rem auto;
+            padding: 2rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #d32f2f;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        button:hover {
+            background-color: #b71c1c;
+        }
+        .error {
+            color: red;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Redbus Clone</h1>
+        <a href="index.html">Home</a>
+        <a href="search.html">Search Results</a>
+        <a href="login.html">Login</a>
+    </header>
+    <main>
+        <section class="login-form">
+            <h2>Passenger Login</h2>
+            <form id="loginForm">
+                <div class="error" id="errorMsg"></div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required />
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required />
+                <button type="submit">Login</button>
+            </form>
+        </section>
+    </main>
+    <script>
+        const loginForm = document.getElementById("loginForm");
+        const errorMsg = document.getElementById("errorMsg");
+
+        loginForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+            const username = loginForm.username.value.trim();
+            const password = loginForm.password.value.trim();
+
+            // Simple validation: username and password must be at least 3 chars
+            if (username.length < 3 || password.length < 3) {
+                errorMsg.textContent = "Username and password must be at least 3 characters long.";
+                return;
+            }
+
+            // Simulate login success
+            localStorage.setItem("loggedInUser", JSON.stringify({ username }));
+            errorMsg.textContent = "";
+            alert("Login successful!");
+            window.location.href = "index.html";
+        });
+    </script>
+</body>
+</html>

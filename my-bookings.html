@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Redbus Clone - My Bookings</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        .booking-item {
+            border-bottom: 1px solid #ccc;
+            padding: 1rem 0;
+        }
+        .booking-item:last-child {
+            border-bottom: none;
+        }
+        button {
+            background-color: #d32f2f;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 0.5rem;
+        }
+        button:hover {
+            background-color: #b71c1c;
+        }
+        #trackingStatus {
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Redbus Clone</h1>
+        <a href="index.html">Home</a>
+        <a href="my-bookings.html">My Bookings</a>
+    </header>
+    <main>
+        <section class="my-bookings">
+            <h2>My Booked Buses</h2>
+            <div id="bookingsContainer">
+                <!-- Bookings will be displayed here -->
+            </div>
+            <div id="trackingStatus"></div>
+        </section>
+    </main>
+    <script>
+        function loadBookings() {
+            const bookings = JSON.parse(localStorage.getItem("bookings") || "[]");
+            const container = document.getElementById("bookingsContainer");
+            const trackingStatus = document.getElementById("trackingStatus");
+            container.innerHTML = "";
+            trackingStatus.textContent = "";
+
+            if (bookings.length === 0) {
+                container.innerHTML = "<p>No bookings found.</p>";
+                return;
+            }
+
+            bookings.forEach((booking, index) => {
+                const div = document.createElement("div");
+                div.className = "booking-item";
+                div.innerHTML = `
+                    <p><strong>Bus:</strong> ${booking.busName}</p>
+                    <p><strong>Passenger:</strong> ${booking.passengerName}</p>
+                    <p><strong>Seats:</strong> ${booking.seatNumbers}</p>
+                    <button onclick="trackBus(${index})">Track Bus</button>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function trackBus(index) {
+            const bookings = JSON.parse(localStorage.getItem("bookings") || "[]");
+            const trackingStatus = document.getElementById("trackingStatus");
+            if (index < 0 || index >= bookings.length) return;
+
+            // Simulate tracking status
+            trackingStatus.textContent = `Tracking Bus "${bookings[index].busName}": Currently en route, expected arrival in 30 minutes.`;
+        }
+
+        document.addEventListener("DOMContentLoaded", loadBookings);
+    </script>
+</body>
+</html>

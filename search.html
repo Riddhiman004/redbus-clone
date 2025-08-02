@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FlexiSpot - Search Results</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header>
+        <h1>Busi<span style="color:#fca311;">FY</span></h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="search.html">Book Now</a>
+            <a href="my-bookings.html">Show Booking</a>
+            <span id="authLinks"></span>
+        </nav>
+    </header>
+    <main>
+        <section class="search-form">
+            <h2>Search Buses</h2>
+            <form id="searchForm" action="search.html" method="GET">
+                <label for="source">Source:</label>
+                <input type="text" id="source" name="source" required />
+                <label for="destination">Destination:</label>
+                <input type="text" id="destination" name="destination" required />
+                <label for="date">Date of Journey:</label>
+                <input type="date" id="date" name="date" required />
+                <button type="submit">Search</button>
+            </form>
+        </section>
+        <section class="search-results">
+            <h2>Available Buses</h2>
+            <div id="resultsContainer">
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

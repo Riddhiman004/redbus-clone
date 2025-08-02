@@ -1,0 +1,277 @@
+/* General styles */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #5b21b6, #3b82f6);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: transparent;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #fbbf24;
+}
+
+.logo-icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 0.5rem;
+    stroke: #fbbf24;
+}
+
+.nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #fbbf24;
+}
+
+.welcome-section {
+    text-align: center;
+    padding: 4rem 2rem 2rem;
+}
+
+.welcome-title {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #7c3aed, #fbbf24);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.welcome-subtitle {
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-top: 0;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background: #fff;
+    color: #1e293b;
+    border-radius: 12px;
+    padding: 1.5rem;
+    width: 250px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.feature-card.blue {
+    border-top: 4px solid #3b82f6;
+}
+
+.feature-card.green {
+    border-top: 4px solid #22c55e;
+}
+
+.feature-card.purple {
+    border-top: 4px solid #7c3aed;
+}
+
+.how-it-works {
+    background: #fff;
+    color: #4c1d95;
+    max-width: 900px;
+    margin: 2rem auto 4rem;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.how-it-works h2 {
+    margin-bottom: 1.5rem;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.step {
+    flex: 1 1 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.step-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.step-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.footer {
+    background-color: #1e293b;
+    color: #94a3b8;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+}
+
+/* Seat selection styles */
+.seat-selection-container {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto 4rem;
+    color: #1e293b;
+    background: #f9fafb;
+    border-radius: 12px;
+}
+
+.seat-selection-form {
+    flex: 1;
+}
+
+.seat-selection-form h2 {
+    margin-bottom: 1rem;
+    color: #1e293b;
+}
+
+.seat-selection-form label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+.seat-selection-form input[type="text"],
+.seat-selection-form input[type="date"],
+.seat-selection-form select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.25rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.seat-selection-form button {
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.seat-selection-form button:hover {
+    background-color: #2563eb;
+}
+
+.seat-layout {
+    flex: 1;
+}
+
+.seat-icons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    color: #1e293b;
+}
+
+.seat-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+}
+
+.icon-available {
+    background-color: #22c55e;
+}
+
+.icon-selected {
+    background-color: #3b82f6;
+}
+
+.icon-booked {
+    background-color: #ef4444;
+}
+
+.seat-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 0.5rem;
+}
+
+.seat {
+    background-color: #22c55e;
+    color: white;
+    border-radius: 6px;
+    padding: 0.5rem;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+
+.seat.booked {
+    background-color: #ef4444;
+    cursor: not-allowed;
+}
+
+.seat.selected {
+    background-color: #3b82f6;
+}

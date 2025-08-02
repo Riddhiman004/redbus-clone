@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Redbus Clone - Booking</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header>
+        <h1>Redbus Clone</h1>
+        <a href="index.html">Home</a>
+        <a href="search.html">Search Results</a>
+    </header>
+    <main>
+        <section class="booking-form">
+            <h2>Book Your Seat</h2>
+            <form id="bookingForm">
+                <label for="busName">Bus Name:</label>
+                <input type="text" id="busName" name="busName" readonly />
+                <label for="passengerName">Passenger Name:</label>
+                <input type="text" id="passengerName" name="passengerName" required />
+                <label for="passengerAge">Age:</label>
+                <input type="number" id="passengerAge" name="passengerAge" required min="1" />
+                <label for="seatNumbers">Seat Numbers (comma separated):</label>
+                <input type="text" id="seatNumbers" name="seatNumbers" required pattern="^\\d+(,\\s*\\d+)*$|^\\d+$" title="Enter seat numbers separated by commas, e.g. 1, 2, 3" />
+                <button type="submit">Confirm Booking</button>
+            </form>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
